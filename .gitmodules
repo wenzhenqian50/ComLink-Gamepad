@@ -1,0 +1,6 @@
+[submodule "Firmware/ComLink"]
+	path = Firmware/ComLink
+	url = https://github.com/wenzhenqian50/ComLink.git
+[submodule "Firmware/ComLink_Receiver"]
+	path = Firmware/ComLink_Receiver
+	url = https://github.com/wenzhenqian50/ComLink_Receiver.git
