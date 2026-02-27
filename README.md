@@ -3,8 +3,8 @@
 ![Windows Experimental](https://img.shields.io/badge/Windows-Experimental-orange?logo=windows&logoColor=white) [![ESP-IDF v5.5.1](https://img.shields.io/badge/ESP--IDF-v5.5.1-%23E7352C?logo=espressif&logoColor=white)](https://docs.espressif.com/projects/esp-idf/en/v5.5.1/esp32/get-started/index.html) [![ROS2 Humble](https://img.shields.io/badge/ROS2-Humble-22314E?logo=ros&logoColor=white)](https://docs.ros.org/en/humble/index.html) ![Vue.js](https://img.shields.io/badge/Vue.js-v3-%234FC08D?logo=vue.js&logoColor=white) ![Vant](https://img.shields.io/badge/Vant-UI-%231989FA?logo=vant&logoColor=white) [![License](https://img.shields.io/github/license/wenzhenqian50/ComLink-Gamepad)](LICENSE) ![GitHub stars](https://img.shields.io/github/stars/wenzhenqian50/ComLink-Gamepad?logo=github&color=yellow) [![Bilibili](https://img.shields.io/badge/Bilibili-homepage-%23FB7299?logo=bilibili&logoColor=white)](https://space.bilibili.com/493340537?spm_id_from=333.1007.0.0)
 
 ![渲染图](Docs/Images/ComLink.png)
-> 注: 此仓库提供ComLink项目包括软硬件全部资源,仅用于学习,禁止商用.
-> 视频URL: 
+> 注: 此仓库提供ComLink项目包括软硬件全部资源,仅用于学习,禁止商用.  
+> Video URL: 
 
 ### 📈软件开发进度:
 - [x] **HID 蓝牙设备模拟**
@@ -39,7 +39,7 @@
 **感知与交互:** 内部配置了六轴运动姿态传感器, 配备高精度滤波算法, 可以实现多样的交互方式, 还有震动马达加持(受限于空间利用, 没有使用线性马达, 待升级), 提供不错的触觉反馈.
 ![爆炸视图](Docs/Images/ComLink_Boom.png)
 ### 关于硬件
-项目一共涉及到3块 PCB 的制作, 副板和底板负责用于拓展接口, 主板双面四层设计, 部分元件需要电烙铁焊接, 电源为一块400mAh的锂电池, 摇杆模块使用的Joy-Con同款拆机件; 主控使用ESP32S3N8R8, 板载CH343P和SGM4056用于串口装USB和电池充电保护, 配备长按开关机电路, 保证按键复用性与机身简洁, 采用双电源切换电路, 自由切换主机供电或电池供电.
+项目一共涉及到3块 PCB 的制作, 副板和底板负责用于拓展接口, 主板双面四层设计, 部分元件需要电烙铁焊接, 电源为一块400mAh的锂电池, 摇杆模块使用的Joy-Con同款拆机件; 主控使用ESP32S3N8R8, 板载CH343P和SGM4056用于串口转USB和电池充电保护, 配备长按开关机电路, 保证按键复用性与机身简洁, 采用双电源切换电路, 自由切换主机供电或电池供电.
 ![主板](Docs/Images/mainboard.PNG)
 # 关于复刻
 
