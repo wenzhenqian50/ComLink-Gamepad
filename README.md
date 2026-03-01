@@ -1,9 +1,9 @@
 # ComLink-Gamepad: 万能控制器
-![Windows Experimental](https://img.shields.io/badge/Windows-Experimental-orange?logo=windows&logoColor=white) [![ESP-IDF v5.5.1](https://img.shields.io/badge/ESP--IDF-v5.5.1-%23E7352C?logo=espressif&logoColor=white)](https://docs.espressif.com/projects/esp-idf/en/v5.5.1/esp32/get-started/index.html) [![ROS2 Humble](https://img.shields.io/badge/ROS2-Humble-22314E?logo=ros&logoColor=white)](https://docs.ros.org/en/humble/index.html) ![Vue.js](https://img.shields.io/badge/Vue.js-v3-%234FC08D?logo=vue.js&logoColor=white) ![Vant](https://img.shields.io/badge/Vant-UI-%231989FA?logo=vant&logoColor=white) [![License](https://img.shields.io/github/license/wenzhenqian50/ComLink-Gamepad)](LICENSE) ![GitHub stars](https://img.shields.io/github/stars/wenzhenqian50/ComLink-Gamepad?logo=github&color=yellow) [![Bilibili](https://img.shields.io/badge/Bilibili-homepage-%23FB7299?logo=bilibili&logoColor=white)](https://space.bilibili.com/493340537?spm_id_from=333.1007.0.0)
+![Windows Experimental](https://img.shields.io/badge/Windows-Experimental-orange?logo=windows&logoColor=white) ![Docker](https://img.shields.io/badge/Docker-%232496ED?logo=docker&logoColor=white) ![Arch](https://img.shields.io/badge/Arch-Xtensa--LX7-grey) [![ESP-IDF v5.5.1](https://img.shields.io/badge/ESP--IDF-v5.5.1-%23E7352C?logo=espressif&logoColor=white)](https://docs.espressif.com/projects/esp-idf/en/v5.5.1/esp32/get-started/index.html) [![ROS2 Humble](https://img.shields.io/badge/ROS2-Humble-22314E?logo=ros&logoColor=white)](https://docs.ros.org/en/humble/index.html) ![Vue.js](https://img.shields.io/badge/Vue.js-v3-%234FC08D?logo=vue.js&logoColor=white) ![Vant](https://img.shields.io/badge/Vant-UI-%231989FA?logo=vant&logoColor=white) [![License](https://img.shields.io/github/license/wenzhenqian50/ComLink-Gamepad)](LICENSE) ![GitHub stars](https://img.shields.io/github/stars/wenzhenqian50/ComLink-Gamepad?logo=github&color=yellow) [![Bilibili](https://img.shields.io/badge/Bilibili-homepage-%23FB7299?logo=bilibili&logoColor=white)](https://space.bilibili.com/493340537?spm_id_from=333.1007.0.0) 
 
 ![渲染图](Docs/Images/ComLink.png)
 > 注: 此仓库提供ComLink项目包括软硬件全部资源,仅用于学习,禁止商用.  
-> Video URL: 
+> Video URL: [Bilibili]()
 
 ### 📈开发进度:
 - [x] **HID 蓝牙设备模拟**
@@ -54,7 +54,7 @@
 **装配上**, 副板和主板连接是通过六根金手指焊接起来的, 一定要注意焊接的时间与温度, 没控制好容易导致外壳受热变形; 磁吸连接器的公和母在焊接前要确定方向, 保证能在底座正确方向吸合;  
 **软件上**, 没有ESP-IDF开发环境的可以通过乐鑫官方的烧录工具, Firmware 中提供了编译好的二进制固件, 烧录时要全程按住中间的功能键, 由于固件较大, 烧录时间较长, 可以直接拿个小夹子夹住按键进行烧录.  
 > 使用 Flash Download Tool 时注意, 固件的地址栏要填写 `0x0`, 其他保持默认即可.  
-> 下载地址: `https://docs.espressif.com/projects/esp-test-tools/zh_CN/latest/esp32/production_stage/tools/flash_download_tool.html`  
+> 下载地址: [Flash Download Tool](https://docs.espressif.com/projects/esp-test-tools/zh_CN/latest/esp32/production_stage/tools/flash_download_tool.html) 
 
 **总体复刻难度中等, 材料成本90RMB左右.**
 ![装配图](Docs/Images/Assembly.jpg)
@@ -73,25 +73,15 @@ ComLink/
 │   │   ├── app_web.cpp           
 │   │   └── mode.cpp               
 │   │
-│   ├── bsp/                       
-│   │   ├── imu.cpp                
-│   │   ├── joy.cpp                
-│   │   ├── key.cpp               
-│   │   ├── motor.cpp           
-│   │   └── oled.cpp          
+│   ├── bsp/                               
 │   │
 │   ├── micro_ros/                 
 │   │
-│   └── utils/                      
-│       ├── esp_hid_gap.c         
-│       ├── param_store.c         
-│       └── u8g2_esp32_hal.c      
+│   └── utils/                          
 │
 ├── web_vue/                     
 │   └── src/
-│
-├── spiffs/                        
-│
+
 ├── CMakeLists.txt             
 ├── sdkconfig                   
 ├── partitions.csv               
@@ -104,12 +94,12 @@ ComLink/
 > 其他还需要修改`sys_mode_t`枚举, OLED动画, 前端界面等.   
 
 ### 编译micro-ROS固件
->由于 Windows 环境编译该固件配置比较麻烦, 因此采用Docker进行编译.
+> 在 原生 Linux 或 WSL2 下, 就不用Docker编译了.
 1. 在 Docker 图形界面或终端中找到`espressif/idf:v5.5.1`的镜像下载;
 2. 将`micro_ros`中的`CMakeLists.txt`的内容和`CMakeLists.txt.old`内容对调(由静态链接转换为动态链接);
 3. 手动删除`build`目录;
 4. 在项目中打开终端, 执行`.\docker_build.ps1`进行自动编译;
-5. 编译完成后重复步骤2和3即可完成.
+5. 编译完成后重复步骤2和步骤3即可完成(不删除 build 目录会导致交叉工具链错误).
 
 ### 前端Web页面开发
 1. `cd web_vue`进入前端工程目录;
@@ -117,3 +107,13 @@ ComLink/
 3. `cd ..`回到主目录;
 4. `.\deploy_web.ps1`自动部署网页;
 5. 部署完成后需重新编译项目工程.
+
+# 结语
+前面就项目的特点进行了讲解, 复刻与开发注意事项进行了说明; 项目中可能还存在许多还没发现的 BUG 有待优化, 欢迎 PR, 后期也还会对功能扩充(敬请期待~), 如果有好的想法也欢迎提出, 如果觉得项目不错, 可以给仓库点个小星星🌟
+
+# 参考资料
+- [ESP-IDF 官方文档](https://docs.espressif.com/projects/esp-idf/zh_CN/v5.5.3/esp32s3/versions.html)
+- [micro-ROS 组件](https://github.com/micro-ROS/micro_ros_espidf_component)
+- [U8g2 图形库](https://github.com/olikraus/u8g2)
+- [Vant 开发文档](https://vant-ui.github.io/vant-weapp/#/home)
+- [核心板电路](https://oshwhub.com/li-chuang-kai-fa-ban/li-chuang-esp32s3r8n8-kai-fa-ban)
