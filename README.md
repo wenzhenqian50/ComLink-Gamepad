@@ -54,7 +54,8 @@
 **装配上**, 副板和主板连接是通过六根金手指焊接起来的, 一定要注意焊接的时间与温度, 没控制好容易导致外壳受热变形; 磁吸连接器的公和母在焊接前要确定方向, 保证能在底座正确方向吸合;  
 **软件上**, 没有ESP-IDF开发环境的可以通过乐鑫官方的烧录工具, Firmware 中提供了编译好的二进制固件, 烧录时要全程按住中间的功能键, 由于固件较大, 烧录时间较长, 可以直接拿个小夹子夹住按键进行烧录.  
 > 使用 Flash Download Tool 时注意, 固件的地址栏要填写 `0x0`, 其他保持默认即可.  
-> 下载地址: [Flash Download Tool](https://docs.espressif.com/projects/esp-test-tools/zh_CN/latest/esp32/production_stage/tools/flash_download_tool.html) 
+> 下载地址: [Flash Download Tool](https://docs.espressif.com/projects/esp-test-tools/zh_CN/latest/esp32/production_stage/tools/flash_download_tool.html)  
+![烧录图](Docs/Images/Flash.png)
 
 **总体复刻难度中等, 材料成本90RMB左右.**
 ![装配图](Docs/Images/Assembly.jpg)
