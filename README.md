@@ -3,7 +3,7 @@
 
 ![渲染图](Docs/Images/ComLink.png)
 > 注: 此仓库提供ComLink项目包括软硬件全部资源,仅用于学习,禁止商用.  
-> Video URL: [Bilibili]()
+> Video URL: [Bilibili](https://www.bilibili.com/video/BV16HPvzfEEj/?spm_id_from=333.1387.homepage.video_card.click&vd_source=7a1c804b8a7b1537f128842d58ce5a24)
 
 ### 📈开发进度:
 - [x] **HID 蓝牙设备模拟**
